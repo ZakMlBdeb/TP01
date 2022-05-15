@@ -1,9 +1,9 @@
-name: model-supervisé RL
-on: [push]
+on:
+  push:
+
 jobs:
-  run:
-    runs-on: [ubuntu-latest]
-    container: python:3.7
+  build:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python 3.8
@@ -16,10 +16,3 @@ jobs:
           python3.8 -m venv env
           source env/bin/activate
           echo "VIRTUAL ENV:" $VIRTUAL_ENV
-      - name: cml_run
-        env:
-            repo_token: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          # Your ML workflow goes here
-          pip install -r requirements.txt
-          jupyter nbconvert --to python rl_tp.ipynb
