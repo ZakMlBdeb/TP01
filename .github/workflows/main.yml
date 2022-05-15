@@ -15,6 +15,9 @@ jobs:
           pip install --upgrade pip
           python3.8 -m venv env
           source env/bin/activate
+      - name: Mlflow COntainer  
+        run: |
+          
       - name: cml_run
         run: |
           # Your ML workflow goes here
@@ -22,4 +25,5 @@ jobs:
           pip install jupyter
           pip install nbconvert
           jupyter nbconvert --to OPTIONS rl_tp.ipynb
+          mlflow ui
           python rl_tp.py
