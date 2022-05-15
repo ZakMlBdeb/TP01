@@ -22,4 +22,5 @@ jobs:
           pip install jupyter
           pip install nbconvert
           jupyter nbconvert rl_tp.ipynb --to python
+          mlflow ui
           python rl_tp.py
