@@ -19,4 +19,6 @@ jobs:
         run: |
           # Your ML workflow goes here
           pip install -r requirements.txt
+          pip install jupyter
+          pip install nbconvert
           python rl_tp.ipynb
