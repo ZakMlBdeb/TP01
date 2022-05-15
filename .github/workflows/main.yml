@@ -1,0 +1,13 @@
+name: model-supervisé RL
+on: [push]
+jobs:
+  run:
+    runs-on: [ubuntu-latest]
+    container: python:3.7
+    steps:
+      - uses: actions/checkout@v2
+      - name: cml_run
+        run: |
+          # Your ML workflow goes here
+          pip install -r requirements.txt
+          python rl_tp.ipynb
