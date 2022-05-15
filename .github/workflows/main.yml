@@ -11,5 +11,9 @@ jobs:
             repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Your ML workflow goes here
+          pip install virtualenv
+          VIRTUAl_ENV=/env
+          virtualenv_venv -p python3
+          PATH='$VIRTUAl_ENV/bin:$PATH"
           pip install -r requirements.txt
           jupyter nbconvert --to python rl_tp.ipynb
