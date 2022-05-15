@@ -1,4 +1,4 @@
 pandas
 numpy
-sklear
+sklearn
 mlflow
