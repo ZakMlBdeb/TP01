@@ -25,5 +25,5 @@ jobs:
           python rl_tp.py
           # Write your CML report
           echo "## Metriques:" >> report.md
-          cat lr.dat >> report.md
+          cat c:\\tmp\\server_dev\\lr.dat >> report.md
 
