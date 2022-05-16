@@ -5,11 +5,11 @@ RUN VIRTUAl_ENV=/env
 RUN virtualenv_venv -p python3
 ENV PATH='$VIRTUAl_ENV/bin:$PATH"
 
-WORKDIR /app
-ADD . /app
+WORKDIR .
+ADD . .
 
 # install dependencies:
-RUN pip[ install - r requirments.txt
+RUN pip[ install - r requirements.txt
 
 #Run the application
 CMD["python", "rl_tp.ipynb"]
