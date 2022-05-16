@@ -1,0 +1,25 @@
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Run Python commands
+        run: |
+          pip install --upgrade pip
+          python3.8 -m venv env
+          source env/bin/activate
+      - name: cml_run
+        run: |
+          # Your ML workflow goes here
+          pip install -r requirements.txt
+          pip install jupyter
+          pip install nbconvert
+          jupyter nbconvert rl_tp.ipynb --to python
+          python rl_tp.py
