@@ -23,3 +23,7 @@ jobs:
           pip install nbconvert
           jupyter nbconvert rl_tp.ipynb --to python
           python rl_tp.py
+          # Write your CML report
+          echo "## Metriques:" >> report.md
+          cat lr.dat >> report.md
+
